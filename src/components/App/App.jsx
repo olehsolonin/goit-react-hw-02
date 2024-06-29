@@ -29,18 +29,21 @@ export default function App() {
 
 	 const positiveFeedback =
     totalFeedback > 0
-      ? Math.round((values.good / (totalFeedback - values.neutral)) * 100)
-      : 0;
-
-		useEffect(() => {
-			const savedValues = localStorage.getItem('getData');
+      ? Math.round((values.good / totalFeedback) * 100): 0;
+		
+	useEffect(() => {
+			const savedValues = localStorage.getItem("getData");
 			if (savedValues) {
 			  setValues(JSON.parse(savedValues));
 			}
+			else{
+				setValues({ good: 0, neutral: 0, bad: 0 })
+			}
 		 }, []);
+
 	  
-		 useEffect(() => {
-			localStorage.setItem('getData', JSON.stringify(values));
+	useEffect(() => {
+			localStorage.setItem("getData", JSON.stringify(values));
 		 }, [values]);
 
 

@@ -1,4 +1,4 @@
-export default function Notification(params) {
+export default function Notification() {
 	return (
 	<div>
 		<p>No feedback yet</p>
