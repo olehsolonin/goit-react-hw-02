@@ -6,5 +6,6 @@ export default defineConfig({
 	plugins: [react()],
 	build: {
 		sourcemap: true,
-	}
+	},
+	base: process.env.BASE_URL || '/'
 });
