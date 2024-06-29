@@ -1,7 +1,3 @@
-// import { Children } from "react";
-
-
-
 export default function Description({title, text}) {
 	
 	return (
